@@ -1,0 +1,859 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<cb:CODEBLOCKS xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://education.mit.edu/openblocks/ns http://education.mit.edu/openblocks/codeblocks.xsd" xmlns:cb="http://education.mit.edu/openblocks/ns">
+<Pages collapsible-pages="yes" drawer-with-page="yes">
+<Page page-color="128 128 128" page-drawer="Main" page-infullview="yes" page-name="Main" page-width="2560">
+<PageBlocks>
+<Block genus-name="greater" id="944">
+<Location>
+<X>358</X>
+<Y>376</Y>
+</Location>
+<Plug>
+<BlockConnector con-block-id="943" connector-kind="plug" connector-type="boolean" init-type="boolean" label="" position-type="mirror"/>
+</Plug>
+<Sockets num-sockets="2">
+<BlockConnector con-block-id="965" connector-kind="socket" connector-type="number" init-type="number" label="" position-type="bottom"/>
+<BlockConnector con-block-id="966" connector-kind="socket" connector-type="number" init-type="number" label="" position-type="bottom"/>
+</Sockets>
+</Block>
+<Block genus-name="number" id="966">
+<Label>0</Label>
+<Location>
+<X>467</X>
+<Y>379</Y>
+</Location>
+<Plug>
+<BlockConnector con-block-id="944" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="mirror"/>
+</Plug>
+</Block>
+<Block genus-name="variable_number" id="965">
+<Label>size</Label>
+<Location>
+<X>368</X>
+<Y>379</Y>
+</Location>
+<Plug>
+<BlockConnector con-block-id="944" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="mirror"/>
+</Plug>
+</Block>
+<Block genus-name="variable_digital" id="974">
+<Label>available</Label>
+<Location>
+<X>477</X>
+<Y>442</Y>
+</Location>
+<Plug>
+<BlockConnector con-block-id="973" connector-kind="plug" connector-type="boolean" init-type="boolean" label="" position-type="mirror"/>
+</Plug>
+</Block>
+<Block genus-name="while" id="973">
+<Location>
+<X>355</X>
+<Y>439</Y>
+</Location>
+<BeforeBlockId>967</BeforeBlockId>
+<Sockets num-sockets="2">
+<BlockConnector con-block-id="974" connector-kind="socket" connector-type="boolean" init-type="boolean" label="teste" position-type="single"/>
+<BlockConnector con-block-id="986" connector-kind="socket" connector-type="cmd" init-type="cmd" label="Befehle" position-type="single"/>
+</Sockets>
+</Block>
+<Block genus-name="code" id="986">
+<Location>
+<X>474</X>
+<Y>471</Y>
+</Location>
+<Comment>
+<Text>Lesen und Dekodieren der empfangenen Daten</Text>
+<Location>
+<X>836</X>
+<Y>390</Y>
+</Location>
+<BoxSize>
+<Width>150</Width>
+<Height>100</Height>
+</BoxSize>
+</Comment>
+<BeforeBlockId>973</BeforeBlockId>
+<AfterBlockId>988</AfterBlockId>
+<Sockets num-sockets="1">
+<BlockConnector con-block-id="987" connector-kind="socket" connector-type="string" init-type="string" label="code" position-type="single"/>
+</Sockets>
+</Block>
+<Block genus-name="code" id="988">
+<Location>
+<X>474</X>
+<Y>501</Y>
+</Location>
+<BeforeBlockId>986</BeforeBlockId>
+<AfterBlockId>992</AfterBlockId>
+<Sockets num-sockets="1">
+<BlockConnector con-block-id="989" connector-kind="socket" connector-type="string" init-type="string" label="code" position-type="single"/>
+</Sockets>
+</Block>
+<Block genus-name="sendThingspeak" id="992">
+<Location>
+<X>474</X>
+<Y>531</Y>
+</Location>
+<Comment>
+<Text>Empfangene Sensorwerte an Thingspeak senden</Text>
+<Location>
+<X>895</X>
+<Y>540</Y>
+</Location>
+<BoxSize>
+<Width>150</Width>
+<Height>100</Height>
+</BoxSize>
+</Comment>
+<BeforeBlockId>988</BeforeBlockId>
+<AfterBlockId>995</AfterBlockId>
+<Sockets num-sockets="10">
+<BlockConnector con-block-id="993" connector-kind="socket" connector-type="string" init-type="string" label="Server" position-type="single"/>
+<BlockConnector con-block-id="994" connector-kind="socket" connector-type="string" init-type="string" label="API-Key" position-type="single"/>
+<BlockConnector con-block-id="1216" connector-kind="socket" connector-type="number" init-type="number" label="Feld 1" position-type="single"/>
+<BlockConnector con-block-id="1217" connector-kind="socket" connector-type="number" init-type="number" label="Feld 2" position-type="single"/>
+<BlockConnector con-block-id="1218" connector-kind="socket" connector-type="number" init-type="number" label="Feld 3" position-type="single"/>
+<BlockConnector con-block-id="1219" connector-kind="socket" connector-type="number" init-type="number" label="Feld 4" position-type="single"/>
+<BlockConnector con-block-id="1220" connector-kind="socket" connector-type="number" init-type="number" label="Feld 5" position-type="single"/>
+<BlockConnector con-block-id="1222" connector-kind="socket" connector-type="number" init-type="number" label="Feld 6" position-type="single"/>
+<BlockConnector connector-kind="socket" connector-type="number" init-type="number" label="Feld 7" position-type="single"/>
+<BlockConnector connector-kind="socket" connector-type="number" init-type="number" label="Feld 8" position-type="single"/>
+</Sockets>
+</Block>
+<Block genus-name="if" id="995">
+<Location>
+<X>474</X>
+<Y>777</Y>
+</Location>
+<Comment>
+<Text>Prüfen, ob kritische Bodenfeuchte erreicht wurde</Text>
+<Location>
+<X>877</X>
+<Y>715</Y>
+</Location>
+<BoxSize>
+<Width>150</Width>
+<Height>100</Height>
+</BoxSize>
+</Comment>
+<BeforeBlockId>992</BeforeBlockId>
+<AfterBlockId>975</AfterBlockId>
+<Sockets num-sockets="2">
+<BlockConnector con-block-id="997" connector-kind="socket" connector-type="boolean" init-type="boolean" label="teste" position-type="single"/>
+<BlockConnector con-block-id="1008" connector-kind="socket" connector-type="cmd" init-type="cmd" label="dann" position-type="single"/>
+</Sockets>
+</Block>
+<Block genus-name="code" id="975">
+<Location>
+<X>474</X>
+<Y>984</Y>
+</Location>
+<BeforeBlockId>995</BeforeBlockId>
+<Sockets num-sockets="1">
+<BlockConnector con-block-id="976" connector-kind="socket" connector-type="string" init-type="string" label="code" position-type="single"/>
+</Sockets>
+</Block>
+<Block genus-name="text" id="976">
+<Label>available = LoRa.available();</Label>
+<Location>
+<X>536</X>
+<Y>987</Y>
+</Location>
+<Plug>
+<BlockConnector con-block-id="975" connector-kind="plug" connector-type="string" init-type="string" label="" position-type="single"/>
+</Plug>
+</Block>
+<Block genus-name="setter_variable_number" id="1008">
+<Location>
+<X>581</X>
+<Y>813</Y>
+</Location>
+<BeforeBlockId>995</BeforeBlockId>
+<AfterBlockId>1000</AfterBlockId>
+<Sockets num-sockets="2">
+<BlockConnector con-block-id="1009" connector-kind="socket" connector-type="number" init-type="number" label="Variable" position-type="single"/>
+<BlockConnector con-block-id="1011" connector-kind="socket" connector-type="number" init-type="number" label="Wert" position-type="single"/>
+</Sockets>
+</Block>
+<Block genus-name="setter_variable_digital" id="1000">
+<Location>
+<X>581</X>
+<Y>867</Y>
+</Location>
+<BeforeBlockId>1008</BeforeBlockId>
+<AfterBlockId>1003</AfterBlockId>
+<Sockets num-sockets="2">
+<BlockConnector con-block-id="1001" connector-kind="socket" connector-type="boolean" init-type="boolean" label="Variable" position-type="single"/>
+<BlockConnector con-block-id="1002" connector-kind="socket" connector-type="boolean" init-type="boolean" label="Wert" position-type="single"/>
+</Sockets>
+</Block>
+<Block genus-name="pin-write-digital" id="1003">
+<Location>
+<X>581</X>
+<Y>921</Y>
+</Location>
+<Comment>
+<Text>Rasensprenger über Relais anschalten</Text>
+<Location>
+<X>934</X>
+<Y>897</Y>
+</Location>
+<BoxSize>
+<Width>150</Width>
+<Height>100</Height>
+</BoxSize>
+</Comment>
+<BeforeBlockId>1000</BeforeBlockId>
+<Sockets num-sockets="2">
+<BlockConnector con-block-id="1004" connector-kind="socket" connector-type="number" init-type="number" label="pin" position-type="single"/>
+<BlockConnector con-block-id="1007" connector-kind="socket" connector-type="boolean" init-type="boolean" label="Wert" position-type="single"/>
+</Sockets>
+</Block>
+<Block genus-name="digital-high" id="1007">
+<Location>
+<X>733</X>
+<Y>948</Y>
+</Location>
+<Plug>
+<BlockConnector con-block-id="1003" connector-kind="plug" connector-type="boolean" init-type="boolean" label="" position-type="mirror"/>
+</Plug>
+</Block>
+<Block genus-name="number" id="1004">
+<Label>5</Label>
+<Location>
+<X>733</X>
+<Y>924</Y>
+</Location>
+<Plug>
+<BlockConnector con-block-id="1003" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="mirror"/>
+</Plug>
+</Block>
+<Block genus-name="digital-high" id="1002">
+<Location>
+<X>799</X>
+<Y>894</Y>
+</Location>
+<Plug>
+<BlockConnector con-block-id="1000" connector-kind="plug" connector-type="boolean" init-type="boolean" label="" position-type="mirror"/>
+</Plug>
+</Block>
+<Block genus-name="variable_digital" id="1001">
+<Label>active</Label>
+<Location>
+<X>799</X>
+<Y>870</Y>
+</Location>
+<Plug>
+<BlockConnector con-block-id="1000" connector-kind="plug" connector-type="boolean" init-type="boolean" label="" position-type="mirror"/>
+</Plug>
+</Block>
+<Block genus-name="millis" id="1011">
+<Location>
+<X>793</X>
+<Y>840</Y>
+</Location>
+<Plug>
+<BlockConnector con-block-id="1008" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="mirror"/>
+</Plug>
+</Block>
+<Block genus-name="variable_number" id="1009">
+<Label>start</Label>
+<Location>
+<X>793</X>
+<Y>816</Y>
+</Location>
+<Plug>
+<BlockConnector con-block-id="1008" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="mirror"/>
+</Plug>
+</Block>
+<Block genus-name="less" id="997">
+<Location>
+<X>584</X>
+<Y>780</Y>
+</Location>
+<Plug>
+<BlockConnector con-block-id="995" connector-kind="plug" connector-type="boolean" init-type="boolean" label="" position-type="mirror"/>
+</Plug>
+<Sockets num-sockets="2">
+<BlockConnector con-block-id="1221" connector-kind="socket" connector-type="number" init-type="number" label="" position-type="bottom"/>
+<BlockConnector con-block-id="999" connector-kind="socket" connector-type="number" init-type="number" label="" position-type="bottom"/>
+</Sockets>
+</Block>
+<Block genus-name="number" id="999">
+<Label>15</Label>
+<Location>
+<X>721</X>
+<Y>783</Y>
+</Location>
+<Plug>
+<BlockConnector con-block-id="997" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="mirror"/>
+</Plug>
+</Block>
+<Block genus-name="variable_number_double" id="1221">
+<Label>moisture</Label>
+<Location>
+<X>594</X>
+<Y>783</Y>
+</Location>
+<Plug>
+<BlockConnector con-block-id="997" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="mirror"/>
+</Plug>
+</Block>
+<Block genus-name="variable_number_double" id="1222">
+<Label>groundTemperature</Label>
+<Location>
+<X>666</X>
+<Y>702</Y>
+</Location>
+<Plug>
+<BlockConnector con-block-id="992" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="mirror"/>
+</Plug>
+</Block>
+<Block genus-name="variable_number_double" id="1220">
+<Label>moisture</Label>
+<Location>
+<X>666</X>
+<Y>678</Y>
+</Location>
+<Plug>
+<BlockConnector con-block-id="992" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="mirror"/>
+</Plug>
+</Block>
+<Block genus-name="variable_number_double" id="1219">
+<Label>iaq</Label>
+<Location>
+<X>666</X>
+<Y>654</Y>
+</Location>
+<Plug>
+<BlockConnector con-block-id="992" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="mirror"/>
+</Plug>
+</Block>
+<Block genus-name="variable_number_double" id="1218">
+<Label>pressure</Label>
+<Location>
+<X>666</X>
+<Y>630</Y>
+</Location>
+<Plug>
+<BlockConnector con-block-id="992" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="mirror"/>
+</Plug>
+</Block>
+<Block genus-name="variable_number_double" id="1217">
+<Label>humidity</Label>
+<Location>
+<X>666</X>
+<Y>606</Y>
+</Location>
+<Plug>
+<BlockConnector con-block-id="992" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="mirror"/>
+</Plug>
+</Block>
+<Block genus-name="variable_number_double" id="1216">
+<Label>temperature</Label>
+<Location>
+<X>666</X>
+<Y>582</Y>
+</Location>
+<Plug>
+<BlockConnector con-block-id="992" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="mirror"/>
+</Plug>
+</Block>
+<Block genus-name="apikey" id="994">
+<Label>&lt;YOUR_API_KEY&gt;</Label>
+<Location>
+<X>666</X>
+<Y>558</Y>
+</Location>
+<Plug>
+<BlockConnector con-block-id="992" connector-kind="plug" connector-type="string" init-type="string" label="" position-type="single"/>
+</Plug>
+</Block>
+<Block genus-name="host" id="993">
+<Label>api.thingspeak.com</Label>
+<Location>
+<X>666</X>
+<Y>534</Y>
+</Location>
+<Plug>
+<BlockConnector con-block-id="992" connector-kind="plug" connector-type="string" init-type="string" label="" position-type="single"/>
+</Plug>
+</Block>
+<Block genus-name="text" id="989">
+<Label>sscanf(data.c_str(), "%f,%f,%f,%f,%f,%f", &amp;temperature, &amp;humidity, &amp;pressure, &amp;iaq, &amp;moisture, &amp;groundTemperature);</Label>
+<Location>
+<X>536</X>
+<Y>504</Y>
+</Location>
+<Plug>
+<BlockConnector con-block-id="988" connector-kind="plug" connector-type="string" init-type="string" label="" position-type="single"/>
+</Plug>
+</Block>
+<Block genus-name="text" id="987">
+<Label>String data = LoRa.readString();</Label>
+<Location>
+<X>550</X>
+<Y>474</Y>
+</Location>
+<Plug>
+<BlockConnector con-block-id="986" connector-kind="plug" connector-type="string" init-type="string" label="" position-type="single"/>
+</Plug>
+</Block>
+<Block genus-name="greater" id="1411">
+<Location>
+<X>466</X>
+<Y>1059</Y>
+</Location>
+<Plug>
+<BlockConnector con-block-id="1410" connector-kind="plug" connector-type="boolean" init-type="boolean" label="" position-type="mirror"/>
+</Plug>
+<Sockets num-sockets="2">
+<BlockConnector con-block-id="1412" connector-kind="socket" connector-type="number" init-type="number" label="" position-type="bottom"/>
+<BlockConnector con-block-id="1413" connector-kind="socket" connector-type="number" init-type="number" label="" position-type="bottom"/>
+</Sockets>
+</Block>
+<Block genus-name="number" id="1413">
+<Label>15</Label>
+<Location>
+<X>603</X>
+<Y>1062</Y>
+</Location>
+<Plug>
+<BlockConnector con-block-id="1411" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="mirror"/>
+</Plug>
+</Block>
+<Block genus-name="variable_number_double" id="1412">
+<Label>moisture</Label>
+<Location>
+<X>476</X>
+<Y>1062</Y>
+</Location>
+<Plug>
+<BlockConnector con-block-id="1411" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="mirror"/>
+</Plug>
+</Block>
+<Block genus-name="and" id="1410">
+<Location>
+<X>412</X>
+<Y>1035</Y>
+</Location>
+<Plug>
+<BlockConnector con-block-id="1014" connector-kind="plug" connector-type="boolean" init-type="boolean" label="" position-type="single"/>
+</Plug>
+<Sockets num-sockets="2">
+<BlockConnector con-block-id="1013" connector-kind="socket" connector-type="boolean" init-type="boolean" label="" position-type="single"/>
+<BlockConnector con-block-id="1411" connector-kind="socket" connector-type="boolean" init-type="boolean" label="" position-type="single"/>
+</Sockets>
+</Block>
+<Block genus-name="variable_digital" id="1013">
+<Label>active</Label>
+<Location>
+<X>466</X>
+<Y>1035</Y>
+</Location>
+<Plug>
+<BlockConnector con-block-id="1410" connector-kind="plug" connector-type="boolean" init-type="boolean" label="" position-type="mirror"/>
+</Plug>
+</Block>
+<Block genus-name="if" id="1012">
+<Location>
+<X>248</X>
+<Y>1032</Y>
+</Location>
+<Comment>
+<Text>Rasensprenger nach 10min ausschalten</Text>
+<Location>
+<X>772</X>
+<Y>1018</Y>
+</Location>
+<BoxSize>
+<Width>150</Width>
+<Height>100</Height>
+</BoxSize>
+</Comment>
+<BeforeBlockId>943</BeforeBlockId>
+<Sockets num-sockets="2">
+<BlockConnector con-block-id="1014" connector-kind="socket" connector-type="boolean" init-type="boolean" label="teste" position-type="single"/>
+<BlockConnector con-block-id="1023" connector-kind="socket" connector-type="cmd" init-type="cmd" label="dann" position-type="single"/>
+</Sockets>
+</Block>
+<Block genus-name="setter_variable_digital" id="1023">
+<Label>Setze Binär-Variable</Label>
+<Location>
+<X>355</X>
+<Y>1124</Y>
+</Location>
+<BeforeBlockId>1012</BeforeBlockId>
+<AfterBlockId>1026</AfterBlockId>
+<Sockets num-sockets="2">
+<BlockConnector con-block-id="1024" connector-kind="socket" connector-type="boolean" init-type="boolean" label="Variable" position-type="single"/>
+<BlockConnector con-block-id="1025" connector-kind="socket" connector-type="boolean" init-type="boolean" label="Wert" position-type="single"/>
+</Sockets>
+</Block>
+<Block genus-name="pin-write-digital" id="1026">
+<Label>digitalWrite</Label>
+<Location>
+<X>355</X>
+<Y>1178</Y>
+</Location>
+<Comment>
+<Text>Rasensprenger über Relais ausschalten</Text>
+<Location>
+<X>824</X>
+<Y>1131</Y>
+</Location>
+<BoxSize>
+<Width>150</Width>
+<Height>100</Height>
+</BoxSize>
+</Comment>
+<BeforeBlockId>1023</BeforeBlockId>
+<Sockets num-sockets="2">
+<BlockConnector con-block-id="1027" connector-kind="socket" connector-type="number" init-type="number" label="pin" position-type="single"/>
+<BlockConnector con-block-id="1028" connector-kind="socket" connector-type="boolean" init-type="boolean" label="Wert" position-type="single"/>
+</Sockets>
+</Block>
+<Block genus-name="digital-low" id="1028">
+<Location>
+<X>507</X>
+<Y>1205</Y>
+</Location>
+<Plug>
+<BlockConnector con-block-id="1026" connector-kind="plug" connector-type="boolean" init-type="boolean" label="" position-type="mirror"/>
+</Plug>
+</Block>
+<Block genus-name="number" id="1027">
+<Label>5</Label>
+<Location>
+<X>507</X>
+<Y>1181</Y>
+</Location>
+<Plug>
+<BlockConnector con-block-id="1026" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="mirror"/>
+</Plug>
+</Block>
+<Block genus-name="digital-low" id="1025">
+<Location>
+<X>573</X>
+<Y>1151</Y>
+</Location>
+<Plug>
+<BlockConnector con-block-id="1023" connector-kind="plug" connector-type="boolean" init-type="boolean" label="" position-type="mirror"/>
+</Plug>
+</Block>
+<Block genus-name="variable_digital" id="1024">
+<Label>active</Label>
+<Location>
+<X>573</X>
+<Y>1127</Y>
+</Location>
+<Plug>
+<BlockConnector con-block-id="1023" connector-kind="plug" connector-type="boolean" init-type="boolean" label="" position-type="mirror"/>
+</Plug>
+</Block>
+<Block genus-name="and" id="1014">
+<Location>
+<X>358</X>
+<Y>1035</Y>
+</Location>
+<Plug>
+<BlockConnector con-block-id="1012" connector-kind="plug" connector-type="boolean" init-type="boolean" label="" position-type="single"/>
+</Plug>
+<Sockets num-sockets="2">
+<BlockConnector con-block-id="1410" connector-kind="socket" connector-type="boolean" init-type="boolean" label="" position-type="single"/>
+<BlockConnector con-block-id="1015" connector-kind="socket" connector-type="boolean" init-type="boolean" label="" position-type="single"/>
+</Sockets>
+</Block>
+<Block genus-name="greater" id="1015">
+<Location>
+<X>412</X>
+<Y>1087</Y>
+</Location>
+<Plug>
+<BlockConnector con-block-id="1014" connector-kind="plug" connector-type="boolean" init-type="boolean" label="" position-type="mirror"/>
+</Plug>
+<Sockets num-sockets="2">
+<BlockConnector con-block-id="1016" connector-kind="socket" connector-type="number" init-type="number" label="" position-type="bottom"/>
+<BlockConnector con-block-id="1019" connector-kind="socket" connector-type="number" init-type="number" label="" position-type="bottom"/>
+</Sockets>
+</Block>
+<Block genus-name="number" id="1019">
+<Label>600000</Label>
+<Location>
+<X>662</X>
+<Y>1094</Y>
+</Location>
+<Plug>
+<BlockConnector con-block-id="1015" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="mirror"/>
+</Plug>
+</Block>
+<Block genus-name="subtraction" id="1016">
+<Location>
+<X>422</X>
+<Y>1090</Y>
+</Location>
+<Plug>
+<BlockConnector con-block-id="1015" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="mirror"/>
+</Plug>
+<Sockets num-sockets="2">
+<BlockConnector con-block-id="1017" connector-kind="socket" connector-type="number" init-type="number" label="" position-type="bottom"/>
+<BlockConnector con-block-id="1018" connector-kind="socket" connector-type="number" init-type="number" label="" position-type="bottom"/>
+</Sockets>
+</Block>
+<Block genus-name="variable_number" id="1018">
+<Label>start</Label>
+<Location>
+<X>545</X>
+<Y>1093</Y>
+</Location>
+<Plug>
+<BlockConnector con-block-id="1016" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="mirror"/>
+</Plug>
+</Block>
+<Block genus-name="millis" id="1017">
+<Location>
+<X>432</X>
+<Y>1093</Y>
+</Location>
+<Plug>
+<BlockConnector con-block-id="1016" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="mirror"/>
+</Plug>
+</Block>
+<Block genus-name="code" id="945">
+<Location>
+<X>248</X>
+<Y>343</Y>
+</Location>
+<BeforeBlockId>190</BeforeBlockId>
+<AfterBlockId>943</AfterBlockId>
+<Sockets num-sockets="1">
+<BlockConnector con-block-id="946" connector-kind="socket" connector-type="string" init-type="string" label="code" position-type="single"/>
+</Sockets>
+</Block>
+<Block genus-name="if" id="943">
+<Location>
+<X>248</X>
+<Y>373</Y>
+</Location>
+<Comment>
+<Text>Prüfen, ob Lora-Paket empfangen wurde</Text>
+<Location>
+<X>649</X>
+<Y>310</Y>
+</Location>
+<BoxSize>
+<Width>150</Width>
+<Height>100</Height>
+</BoxSize>
+</Comment>
+<BeforeBlockId>945</BeforeBlockId>
+<AfterBlockId>1012</AfterBlockId>
+<Sockets num-sockets="2">
+<BlockConnector con-block-id="944" connector-kind="socket" connector-type="boolean" init-type="boolean" label="teste" position-type="single"/>
+<BlockConnector con-block-id="967" connector-kind="socket" connector-type="cmd" init-type="cmd" label="dann" position-type="single"/>
+</Sockets>
+</Block>
+<Block genus-name="code" id="967">
+<Location>
+<X>355</X>
+<Y>409</Y>
+</Location>
+<BeforeBlockId>943</BeforeBlockId>
+<AfterBlockId>973</AfterBlockId>
+<Sockets num-sockets="1">
+<BlockConnector con-block-id="968" connector-kind="socket" connector-type="string" init-type="string" label="code" position-type="single"/>
+</Sockets>
+</Block>
+<Block genus-name="text" id="968">
+<Label>available = LoRa.available();</Label>
+<Location>
+<X>417</X>
+<Y>412</Y>
+</Location>
+<Plug>
+<BlockConnector con-block-id="967" connector-kind="plug" connector-type="string" init-type="string" label="" position-type="single"/>
+</Plug>
+</Block>
+<Block genus-name="text" id="946">
+<Label>size = LoRa.parsePacket();</Label>
+<Location>
+<X>310</X>
+<Y>346</Y>
+</Location>
+<Plug>
+<BlockConnector con-block-id="945" connector-kind="plug" connector-type="string" init-type="string" label="" position-type="single"/>
+</Plug>
+</Block>
+<Block genus-name="connectWLANAP" id="983">
+<Location>
+<X>249</X>
+<Y>258</Y>
+</Location>
+<Comment>
+<Text>WLAN-Verbindung für Übertragung zu Thingspeak</Text>
+<Location>
+<X>613</X>
+<Y>188</Y>
+</Location>
+<BoxSize>
+<Width>150</Width>
+<Height>100</Height>
+</BoxSize>
+</Comment>
+<BeforeBlockId>453</BeforeBlockId>
+<Sockets num-sockets="2">
+<BlockConnector con-block-id="984" connector-kind="socket" connector-type="string" init-type="string" label="Netzname" position-type="single"/>
+<BlockConnector con-block-id="985" connector-kind="socket" connector-type="string" init-type="string" label="Passwort" position-type="single"/>
+</Sockets>
+</Block>
+<Block genus-name="passwort" id="985">
+<Label>&lt;YOUR_PASSWORD&gt;</Label>
+<Location>
+<X>427</X>
+<Y>285</Y>
+</Location>
+<Plug>
+<BlockConnector con-block-id="983" connector-kind="plug" connector-type="string" init-type="string" label="" position-type="single"/>
+</Plug>
+</Block>
+<Block genus-name="ssid" id="984">
+<Label>&lt;YOUR_SSID&gt;</Label>
+<Location>
+<X>427</X>
+<Y>261</Y>
+</Location>
+<Plug>
+<BlockConnector con-block-id="983" connector-kind="plug" connector-type="string" init-type="string" label="" position-type="single"/>
+</Plug>
+</Block>
+<Block genus-name="code" id="939">
+<Location>
+<X>249</X>
+<Y>138</Y>
+</Location>
+<BeforeBlockId>196</BeforeBlockId>
+<AfterBlockId>198</AfterBlockId>
+<Sockets num-sockets="1">
+<BlockConnector con-block-id="940" connector-kind="socket" connector-type="string" init-type="string" label="code" position-type="single"/>
+</Sockets>
+</Block>
+<Block genus-name="code" id="198">
+<Location>
+<X>249</X>
+<Y>168</Y>
+</Location>
+<BeforeBlockId>939</BeforeBlockId>
+<AfterBlockId>451</AfterBlockId>
+<Sockets num-sockets="1">
+<BlockConnector con-block-id="199" connector-kind="socket" connector-type="string" init-type="string" label="code" position-type="single"/>
+</Sockets>
+</Block>
+<Block genus-name="code" id="451">
+<Location>
+<X>249</X>
+<Y>198</Y>
+</Location>
+<BeforeBlockId>198</BeforeBlockId>
+<AfterBlockId>453</AfterBlockId>
+<Sockets num-sockets="1">
+<BlockConnector con-block-id="452" connector-kind="socket" connector-type="string" init-type="string" label="code" position-type="single"/>
+</Sockets>
+</Block>
+<Block genus-name="code" id="453">
+<Location>
+<X>249</X>
+<Y>228</Y>
+</Location>
+<BeforeBlockId>451</BeforeBlockId>
+<AfterBlockId>983</AfterBlockId>
+<Sockets num-sockets="1">
+<BlockConnector con-block-id="454" connector-kind="socket" connector-type="string" init-type="string" label="code" position-type="single"/>
+</Sockets>
+</Block>
+<Block genus-name="text" id="454">
+<Label>LoRa.setTxPower(20);</Label>
+<Location>
+<X>311</X>
+<Y>231</Y>
+</Location>
+<Plug>
+<BlockConnector con-block-id="453" connector-kind="plug" connector-type="string" init-type="string" label="" position-type="single"/>
+</Plug>
+</Block>
+<Block genus-name="text" id="452">
+<Label>LoRa.setSyncWord(0x2B);</Label>
+<Location>
+<X>311</X>
+<Y>201</Y>
+</Location>
+<Plug>
+<BlockConnector con-block-id="451" connector-kind="plug" connector-type="string" init-type="string" label="" position-type="single"/>
+</Plug>
+</Block>
+<Block genus-name="text" id="199">
+<Label>LoRa.begin(868e6);</Label>
+<Location>
+<X>311</X>
+<Y>171</Y>
+</Location>
+<Plug>
+<BlockConnector con-block-id="198" connector-kind="plug" connector-type="string" init-type="string" label="" position-type="single"/>
+</Plug>
+</Block>
+<Block genus-name="text" id="940">
+<Label>LoRa.setPins(2, -1, 15);</Label>
+<Location>
+<X>311</X>
+<Y>141</Y>
+</Location>
+<Plug>
+<BlockConnector con-block-id="939" connector-kind="plug" connector-type="string" init-type="string" label="" position-type="single"/>
+</Plug>
+</Block>
+<Block genus-name="codeg" id="196">
+<Location>
+<X>249</X>
+<Y>108</Y>
+</Location>
+<Comment>
+<Text>Bibliothek für Kommunikation (LoRa) zwischen Octopodus</Text>
+<Location>
+<X>624</X>
+<Y>45</Y>
+</Location>
+<BoxSize>
+<Width>150</Width>
+<Height>100</Height>
+</BoxSize>
+</Comment>
+<BeforeBlockId>190</BeforeBlockId>
+<AfterBlockId>939</AfterBlockId>
+<Sockets num-sockets="1">
+<BlockConnector con-block-id="197" connector-kind="socket" connector-type="string" init-type="string" label="code" position-type="single"/>
+</Sockets>
+</Block>
+<Block genus-name="text" id="197">
+<Label>#include &lt;LoRa.h&gt;</Label>
+<Location>
+<X>423</X>
+<Y>111</Y>
+</Location>
+<Plug>
+<BlockConnector con-block-id="196" connector-kind="plug" connector-type="string" init-type="string" label="" position-type="single"/>
+</Plug>
+</Block>
+<Block genus-name="program" id="190">
+<Location>
+<X>100</X>
+<Y>100</Y>
+</Location>
+<Sockets num-sockets="2">
+<BlockConnector con-block-id="196" connector-kind="socket" connector-type="cmd" init-type="cmd" label="Setup" position-type="single"/>
+<BlockConnector con-block-id="945" connector-kind="socket" connector-type="cmd" init-type="cmd" label="Schleife" position-type="single"/>
+</Sockets>
+</Block>
+</PageBlocks>
+</Page>
+</Pages>
+</cb:CODEBLOCKS>
